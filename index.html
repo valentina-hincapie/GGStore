@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,22 +22,31 @@
 
         <div class="dashboard-nav">
             <header>
+                <a href="#!" class="menu-toggle d-md-none"><i class="fas fa-bars"></i></a>
                 <a href="#" class="logo"><img src="img/logoGG.png" alt="" srcset=""></a>
             </header>
-            <nav class="dashboard-nav-list"><a href="#" class="dashboard-nav-item"><i class="fas fa-home"></i>
-                    Home </a><a href="#" class="dashboard-nav-item active"><i class="fas fa-tachometer-alt"></i>
-                    dashboard
-                </a><a href="#" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Upload </a>
-                <div class='dashboard-nav-dropdown'><a href="#!"
-                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i>
-                        Media </a>
+            <nav class="dashboard-nav-list">
+                <a href="#" class="dashboard-nav-item" aria-label="Home"><i class="fas fa-home"></i>
+                    <span class="nav-text">Home</span>
+                </a>
+                <a href="#" class="dashboard-nav-item active" aria-label="Dashboard"><i class="fas fa-tachometer-alt"></i>
+                    <span class="nav-text">dashboard</span>
+                </a>
+                <a href="#" class="dashboard-nav-item" aria-label="Upload"><i class="fas fa-file-upload"></i>
+                    <span class="nav-text">Upload</span>
+                </a>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle" aria-label="Media" aria-haspopup="true"><i class="fas fa-photo-video"></i>
+                        <span class="nav-text">Media</span>
+                    </a>
                     <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a
                             href="#" class="dashboard-nav-dropdown-item">Recent</a><a href="#"
                             class="dashboard-nav-dropdown-item">Images</a><a href="#"
                             class="dashboard-nav-dropdown-item">Video</a></div>
                 </div>
-                <div class='dashboard-nav-dropdown'><a href="#!"
-                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Users
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle" aria-label="Users" aria-haspopup="true"><i class="fas fa-users"></i>
+                        <span class="nav-text">Users</span>
                     </a>
                     <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a
                             href="#" class="dashboard-nav-dropdown-item">Subscribed</a><a href="#"
@@ -44,18 +54,29 @@
                             class="dashboard-nav-dropdown-item">Banned</a><a href="#"
                             class="dashboard-nav-dropdown-item">New</a></div>
                 </div>
-                <div class='dashboard-nav-dropdown'><a href="#!"
-                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i>
-                        Payments </a>
+                <div class='dashboard-nav-dropdown'>
+                    <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle" aria-label="Payments" aria-haspopup="true"><i class="fas fa-money-check-alt"></i>
+                        <span class="nav-text">Payments</span>
+                    </a>
                     <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a
                             href="#" class="dashboard-nav-dropdown-item">Recent</a><a href="#"
                             class="dashboard-nav-dropdown-item"> Projections</a>
                     </div>
                 </div>
-                <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a><a href="#"
-                    class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
+                <a href="#" class="dashboard-nav-item" aria-label="Settings"><i class="fas fa-cogs"></i>
+                    <span class="nav-text">Settings</span>
+                </a>
+                <a href="#" class="dashboard-nav-item" aria-label="Profile"><i class="fas fa-user"></i>
+                    <span class="nav-text">Profile</span>
+                </a>
+                <!-- spacer empuja los últimos items al fondo -->
+                <div class="nav-spacer"></div>
                 <div class="nav-item-divider"></div>
-                <a href="#" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+                <div class="nav-bottom">
+                    <a href="#" class="dashboard-nav-item" aria-label="Logout"><i class="fas fa-sign-out-alt"></i>
+                        <span class="nav-text">Logout</span>
+                    </a>
+                </div>
             </nav>
         </div>
 
@@ -105,6 +126,26 @@
             </div>
         </div>
     </div>
+
+    <div class="Videojuegos">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-4 content-column">
+            <h2 class="Videojuegostitulo">VIDEOJUEGOSS</h2>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 image-column">
+            <div class="illustration-container">
+            <div class="card"> 
+                <img class="juego1" src="img/Callofduty.jpg" alt="" class="">
+            <div class="card-info">
+                <p class="title">CALL OF DUTY</p>
+            </div>
+            </div>
+
+            </div>
+        </div>
     <script src="js/conf.js"></script>
     
 </body>
