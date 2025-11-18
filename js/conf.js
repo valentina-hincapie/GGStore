@@ -1,38 +1,45 @@
-const mobileScreen = window.matchMedia("(max-width: 990px )");
-$(document).ready(function () {
-    $(".dashboard-nav-dropdown-toggle").click(function (e) {
-        e.preventDefault();
-        const $parent = $(this).closest(".dashboard-nav-dropdown");
-        const isOpen = $parent.hasClass('show');
-        // close others
-        $('.dashboard-nav-dropdown').removeClass('show').find('.dashboard-nav-dropdown-toggle').attr('aria-expanded','false');
-        if (!isOpen) {
-            $parent.addClass('show');
-            $(this).attr('aria-expanded','true');
-        } else {
-            $parent.removeClass('show');
-            $(this).attr('aria-expanded','false');
-        }
-    });
-    $(".menu-toggle").click(function () {
-        if (mobileScreen.matches) {
-            $(".dashboard-nav").toggleClass("mobile-show");
-        } else {
-            $(".dashboard").toggleClass("dashboard-compact");
-        }
-    });
+jQuery(function($) {
+	// Toggle mobile menu
+	$('.menu-toggle').on('click', function(e) {
+		e.preventDefault();
+		$('.dashboard-nav').toggleClass('mobile-show');
+	});
 
-    // close dropdowns when clicking outside
-    $(document).on('click', function (e) {
-        if ($(e.target).closest('.dashboard-nav').length === 0) {
-            $('.dashboard-nav-dropdown.show').removeClass('show');
-        }
-    });
+	// Handle dropdown toggles
+	$('.dashboard-nav-dropdown-toggle').on('click', function(e) {
+		e.preventDefault();
+		$(this).parent().toggleClass('show');
+	});
 
-    // close on Escape
-    $(document).on('keydown', function (e) {
-        if (e.key === 'Escape' || e.key === 'Esc') {
-            $('.dashboard-nav-dropdown.show').removeClass('show');
-        }
-    });
-});
+	// Close menu when clicking on nav items
+	$('.dashboard-nav-item:not(.dashboard-nav-dropdown-toggle)').on('click', function() {
+		$('.dashboard-nav').removeClass('mobile-show');
+	});
+
+	// Handle dropdown hover on desktop
+	function adjustNav() {
+		var winWidth = $(window).width();
+		
+		if (winWidth >= 992) {
+			$('.dashboard-nav-dropdown').on('mouseenter', function() {
+				$(this).addClass('show');
+			});
+			
+			$('.dashboard-nav-dropdown').on('mouseleave', function() {
+				$(this).removeClass('show');
+			});
+		} else {
+			$('.dashboard-nav-dropdown').off('mouseenter mouseleave');
+		}
+	}
+	
+	$(window).on('resize', adjustNav);
+	adjustNav();
+
+	// Close mobile menu when clicking outside
+	$(document).on('click', function(e) {
+		if (!$(e.target).closest('.dashboard-nav').length) {
+			$('.dashboard-nav').removeClass('mobile-show');
+		}
+	});
+}); 

@@ -218,6 +218,10 @@ a:hover {
     color: var(--accent-blue);
 }
 
+.perfil {
+    margin-left: 650px;
+}
+
 .dashboard-nav-item i {
     display: none; /* mostrar solo texto, no iconos */
 }
@@ -373,6 +377,9 @@ a:hover {
     background: rgba(255,255,255,0.03);
 }
 
+
+
+
 /* Mobile: show hamburger and collapse menu into column */
 @media (max-width: 992px) {
     .dashboard-nav header .menu-toggle {
@@ -517,8 +524,16 @@ a:hover {
     min-height: calc(100vh - 70px);
 }
 
+.container-fluid row {
+    padding: 80px 40px;
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+}
+
 .content-column {
-    padding-left: 8rem;
+    padding-left: 3rem;
     z-index: 10;
 }
 
@@ -531,7 +546,8 @@ a:hover {
 }
 
 .main-title {
-    font-size: 5rem;
+    align-items: center;
+    font-size: 4rem;
     font-weight: 600;
     line-height: 1.1;
     margin-bottom: 40px;
@@ -620,12 +636,14 @@ a:hover {
     justify-content: flex-end;
     align-items: center;
     position: relative;
-    padding-right: 0;
-    width: 45rem;
+    padding-right: 3rem;
+    width: auto;
 }
 
 .imggif {
-    width: 35rem;
+    width: 100%;
+    max-width: 500px;
+    height: auto;
 }
 
 .illustration-container {
@@ -641,84 +659,38 @@ a:hover {
     transform: translateX(10%);
 }
 
-.Videojuegos {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
+.juego_container {
     display: flex;
-    min-height: 100vh;
-    background-image: radial-gradient(
-        circle at center,
-        rgba(150, 0, 150, 0.2) 0%,
-        rgba(26, 8, 26, 1) 70%
-    );
-    background-attachment: fixed;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto
 }
 
-.card {
-  --background: linear-gradient(to right, #74ebd5 0%, #02f1fd 100%);
-  width: 190px;
-  height: 254px;
-  padding: 5px;
-  border-radius: 1rem;
-  overflow: visible;
-  background: #74ebd5;
-  background: var(--background);
-  position: relative;
-  z-index: 1;
+.juego_card {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+    width: 250px;
+    
 }
 
-.card::before,
-.card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 1rem;
-  z-index: -1;
+.juego_card img {
+max-width: 100%;
+height: auto;
+align-items: center;
+border-radius: 10px;
+margin-bottom: 15px;
 }
 
-.card::before {
-  background: linear-gradient(to bottom right, #370637 0%, #370637 100%);
-  transform: rotate(2deg);
+.juego_card {
+    transform: translateY(-5px);
 }
 
-.card::after {
-  background: linear-gradient(to top right, #00f9f1 0%, #8fd3f4 100%);
-  transform: rotate(-2deg);
-}
 
-.card-info {
-  --color: transparent;
-  background: var(--color);
-  color: var(--color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-  border-radius: 0.7rem;
-  position: relative;
-  z-index: 2;
-}
-
-.card .title {
-font-weight: bold;
-letter-spacing: 0.1em;
-}
-
-.card:hover::before,
-.card:hover::after {
-opacity: 0;
-}
-
-.card:hover .card-info {
-color: #74ebd5;
-transition: color 1s;
-}
 
 .Viedojuegostitulo {
     font-size: 4rem;
@@ -833,5 +805,83 @@ transition: color 1s;
 
     .btn-custom-pink, .btn-custom-explore {
         width: 100%;
+    }
+}
+
+/* Mostrar solo iconos (logos) en la barra de navegación - sin modificar nada más */
+.dashboard-nav .nav-text {
+    display: none !important;
+}
+
+.dashboard-nav-item i {
+    display: inline-flex !important;
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0 !important;
+}
+
+.dashboard-nav header .logo img {
+    width: 140px;
+    height: auto;
+}
+
+@media (max-width: 992px) {
+    .dashboard-nav header .menu-toggle {
+        display: inline-block; /* mantener el hamburger en pantallas pequeñas */
+    }
+}
+
+/* Barra teal específica para `index1.html` */
+.dashboard-nav.teal {
+    /* Usar el mismo fondo que el `body` para fusionar la barra con la página */
+    background-color: #1a081a;
+    background-image: radial-gradient(
+        circle at center,
+        rgba(150, 0, 150, 0.2) 0%,
+        rgba(26, 8, 26, 1) 70%
+    );
+    background-attachment: fixed;
+    border-bottom: 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.45);
+}
+.dashboard-nav.teal header {
+    justify-content: space-between;
+    padding: 0 28px;
+}
+.dashboard-nav.teal .logo img {
+    width: 120px;
+    display: block;
+}
+.dashboard-nav.teal .dashboard-nav-list {
+    margin-left: auto;
+    gap: 20px;
+}
+.dashboard-nav.teal .dashboard-nav-item {
+    color: #ffffff;
+    background: transparent;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+.dashboard-nav.teal .dashboard-nav-item:hover {
+    background: rgba(255,255,255,0.04);
+    color: #fff;
+}
+.dashboard-nav.teal .dashboard-nav-item i {
+    display: inline-flex; /* asegurar que se muestren iconos */
+    color: #ffffff;
+    margin-right: 8px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-nav.teal .dashboard-nav-list {
+        display: none; /* simplificar en mobile */
+    }
+    .dashboard-nav.teal header .menu-toggle {
+        display: inline-block;
+        color: #fff;
     }
 }
